@@ -1,0 +1,148 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  box-sizing: border-box;
+}
+body, html {
+  background: linear-gradient(135deg, #f1f2f3 0%, #ffffff 100%);
+}
+:root {
+  --theme-color-main: #80e593;
+  --theme-color-secundary: #52c7cf;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f1f2f3;
+  box-shadow: 0 0 30px rgba(56,59,69,.1);
+  height: 80px;
+}
+.header .contLogo {
+  height: 100%;
+  max-width: 40%;
+  display: flex;
+}
+.header .contLogo .logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.header .contUserData {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+}
+.header .contUserData .userName {
+  opacity: .9;
+  color: #313539;
+  padding: 15px;
+}
+.header .contUserData  .userAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgb(56 59 69 / 10%);
+}
+.header .contUserData .userAvatar img.logo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.activeLink {
+  color: tomato;
+  padding-left: 30px;
+}
+.btnGeneral {
+  padding: 10px 15px;
+  border: none;
+  box-shadow: 0 0 30px rgb(56 59 69 / 10%);
+  border-radius: 6px;
+  background: #fafbfc;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.btnGeneral i {
+  padding: 0 15px 0 0;
+}
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #414549;
+}
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  min-height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginPage .logo {
+  position: absolute;
+  top: -80px;
+  height: 60px;
+}
+.loginPage .contentLogon {
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b11, 10px 10px 20px #52c7cf11, 0 2px 6px 2px rgb(56 59 69 / 5%);
+  background: linear-gradient(135deg,var(--theme-color-main) 0%, var(--theme-color-secundary) 100%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.loginPage .contentLogon div {
+  position: relative;
+}
+.loginPage .contentLogon:before {
+  content: '';
+  background: #fafbfc;
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  z-index: 0;
+  border-radius: 10px;
+  opacity: .98;
+}
+.loginPage .contentLogon .contTitle {
+  padding-bottom: 20px;
+  text-align: center;
+  max-width: 280px;
+}
+.contTitle .title {
+  padding-bottom: 15px;
+}
+.contTitle .textBox {
+  opacity: .6;
+  font-size: 15px;
+  color: #414549;
+}
+.contBtnLogin {
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+}
+.contBtnLogin > * , .contBtnLogin span {
+  flex: calc(50% - 20px);
+  width: 100%;
+  margin: 5px;
+}
+.contBtnLogin span button {
+  width: 100%;
+}
+
+/* nav.nav {
+  display: none;
+} */

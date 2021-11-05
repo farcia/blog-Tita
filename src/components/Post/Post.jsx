@@ -6,9 +6,8 @@ import React, { useState } from "react";
 
 export default function Post({ contPost}) {
     const [modalComentsOpen, setModalComentsOpen] = useState(false);
-
     const [modalAuthorOpen, setModalAuthorOpen] = useState(false);
-  
+    
 
     return (
     
@@ -30,7 +29,7 @@ export default function Post({ contPost}) {
                         <p>{contPost.postText}</p>
                     </div>
                     <div className="contBtnComments">
-                        <button onClick={() => { setModalComentsOpen(true); }}>Ver comentarios</button>
+                        <button onClick={() => {  setModalComentsOpen(true); }}>Ver comentarios</button>
                     </div>
                     <div className="contLiks">
                         <span>Likes: <span>{contPost.postLikes}</span></span>
@@ -43,6 +42,7 @@ export default function Post({ contPost}) {
                     </div>
                 </div>
             </div>
+
             {modalComentsOpen && <ModalBase children={<ModalComments postId={contPost.id} />} setOpenModal={setModalComentsOpen} />}
             {modalAuthorOpen && <ModalBase children={<ModalAuthor author={{}} />} setOpenModal={setModalAuthorOpen} />}
         </>

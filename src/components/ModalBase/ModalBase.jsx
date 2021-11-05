@@ -6,7 +6,7 @@ export default function ModalBase({children, setOpenModal}) {
             <span children="modalBackground"></span>
             <div className="modalContainer">
                 <div className="titleCloseBtn">
-                    <button onClick={() => {setOpenModal(false);}}><span children="iconClose"></span></button>
+                    <button onClick={() => {setOpenModal(false);}}><span className="iconClose">Close Modal</span></button>
                 </div>
                 { children }
             </div>

@@ -41,7 +41,7 @@ export default function Post({ contPost }) {
                     </div>
                 </div>
             </div>
-            {modalComentsOpen && <ModalBase children={<ModalComments comments={contPost.id} />} setOpenModal={setModalComentsOpen} />}
+            {modalComentsOpen && <ModalBase children={<ModalComments postId={contPost.id} />} setOpenModal={setModalComentsOpen} />}
             {modalAuthorOpen && <ModalBase children={<ModalAuthor author={{}} />} setOpenModal={setModalAuthorOpen} />}
         </>
     )

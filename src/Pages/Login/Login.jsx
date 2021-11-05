@@ -15,6 +15,7 @@ const Login = () => {
     }
     
     const onFailure = (response) => {
+        console.log(response);
         console.log('Fallo')
     }
 

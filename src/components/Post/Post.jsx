@@ -8,8 +8,10 @@ export default function Post({ contPost}) {
     const [modalComentsOpen, setModalComentsOpen] = useState(false);
 
     const [modalAuthorOpen, setModalAuthorOpen] = useState(false);
+  
 
     return (
+    
         <>
             <div className="itemPost">
                 <div className="contImg">
@@ -21,7 +23,7 @@ export default function Post({ contPost}) {
                             <img src={contPost.authorAvatar} alt="img del Autor" />
                         </div>
                         <div className="contName">
-                            <span className="name" onClick={()=>{setModalAuthorOpen(true)}}><small>Autor</small>{contPost.authorName}</span>
+                            <span className="name" ><small>Autor | <span className="link" onClick={()=>{setModalAuthorOpen(true)}}>Ver más detalle</span></small>{contPost.authorName}</span>
                         </div>
                     </div>
                     <div className="contText">

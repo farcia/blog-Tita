@@ -12,7 +12,7 @@ export default function PostList() {
             setPosts(response.data);
         });
 
-    }, [posts]);
+    }, [posts?.data?.length]);
     return (
         <>
             {

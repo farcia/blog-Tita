@@ -1,12 +1,15 @@
 
 
 export default function ModalBase({children, setOpenModal}) {
+    const noScroll = () => {
+        let body = document.querySelector('body');
+        if(body.classList.contains('noScroll')){body.classList.remove('noScroll')}
+    }
     return (
         <div className="modal">
-            <span children="modalBackground"></span>
             <div className="modalContainer">
-                <div className="titleCloseBtn">
-                    <button onClick={() => {setOpenModal(false);}}><span className="iconClose">Close Modal</span></button>
+                <div  onClick={() => {setOpenModal(false);noScroll()}} className="closeBtn">
+                    <span className="iconClose"></span>
                 </div>
                 { children }
             </div>

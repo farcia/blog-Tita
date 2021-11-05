@@ -8,7 +8,8 @@ export default function DummyTransformData(dataColection) {
         postComments: 0,
         postTags: dataColection.tags,
         authorAvatar: dataColection.owner.picture,
-        authorName: dataColection.owner.firstName + ' ' + dataColection.owner.lastName
+        authorName: dataColection.owner.firstName + ' ' + dataColection.owner.lastName,
+        authorId: dataColection.owner.id
     }
 
 

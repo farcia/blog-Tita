@@ -192,12 +192,18 @@ body, html {
   flex-flow: column;
   flex: calc(25% - 20px);
   width: 100%;
+  max-width: calc(50% - 20px);
   margin:10px 10px;
   min-width: 300px;
   overflow: hidden;
   border: 1px solid #f1f2f3;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b11, 10px 10px 20px #52c7cf11, 0 2px 6px 2px rgb(56 59 69 / 5%);
+}
+@media screen and (max-width:460px) {
+  .indexPage .itemPost {
+    max-width: 100%;
+  }
 }
 .itemPost .contImg {
   display: flex;
@@ -400,7 +406,7 @@ body, html {
 .modalContainer {
   position: relative;
   width: 100%;
-	max-width: 380px;
+	max-width: 500px;
 	background: var(--linear-gradient);
 	padding: 20px;
 	border-radius: 12px 12px 0 0;

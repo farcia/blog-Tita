@@ -1,7 +1,5 @@
 import CommentList from "../Comment/CommentList"
 
-
-
 function ModalComments({ postId }) {
     return (
         <div className="contComments">

@@ -32,7 +32,7 @@ function CommentList( { postId }) {
     return (
         <>
         {
-            comments?.data?.map((item, index)=> {
+            comments?.data?.length ? comments.data.map((item, index)=> {
                 let $created_at = moment(item.publishDate).tz('America/Bogota');
                 return (
                         <div key={'comment'+index} className="contComentItem">
@@ -55,8 +55,8 @@ function CommentList( { postId }) {
                             </div>
                         </div>
                         )
-                })
-        }
+                }): <div><h2>Este post no tiene comentarios</h2></div>
+        } 
         </>
     )
 }

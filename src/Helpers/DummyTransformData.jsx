@@ -1,6 +1,7 @@
 
 export default function DummyTransformData(dataColection) {
     const data = {
+        id: dataColection.id,
         img: dataColection.image,
         postText: dataColection.text,
         postLikes: dataColection.likes,

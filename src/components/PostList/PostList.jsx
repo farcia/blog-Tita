@@ -2,6 +2,7 @@ import Api from "../../api";
 import Post from "../Post";
 import { useState, useEffect } from "react";
 import DummyTransformData from "../../Helpers/DummyTransformData";
+import PostLoader from "./PostLoader";
 
 
 export default function PostList() {
@@ -15,7 +16,7 @@ export default function PostList() {
     return (
         <>
             {
-                posts?.data?.map(item => <Post contPost={DummyTransformData(item)} />)
+                posts?.data?.length ? posts?.data?.map(item => <Post contPost={DummyTransformData(item)} />) : <PostLoader />
             }
         </>
     )

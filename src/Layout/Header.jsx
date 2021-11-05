@@ -1,5 +1,7 @@
 import Logo from '../resources/img/Logo_TitaMediaNublack320.png';
-import UseAuth from "../Auth/UseAuth"
+import UseAuth from "../Auth/UseAuth";
+import NavBar from "../components/NavBar"
+import NotAvatar from "../resources/img/imgUserDev.jpg"
 
 export default function Header() {
     const auth = UseAuth();
@@ -16,10 +18,11 @@ export default function Header() {
                             <span>{auth.user.username}</span>
                         </div>
                         <div className="userAvatar">
-                        <img className="logo" alt="Logo Tita Media" src={auth.user.avatar} />
+                        <img className="logo" alt="Logo Tita Media" src={auth?.user?.avatar || NotAvatar} />
 
                         </div>
                     </div>
+                    <NavBar />
                 </header>
             )}
         </>

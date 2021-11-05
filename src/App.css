@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Be Vietnam', sans-serif;
   box-sizing: border-box;
+  list-style: none;
 }
 body, html {
   background: linear-gradient(135deg, #f1f2f3 0%, #ffffff 100%);
@@ -11,19 +12,22 @@ body, html {
 :root {
   --theme-color-main: #80e593;
   --theme-color-secundary: #52c7cf;
+  --linear-gradient: linear-gradient(135deg,var(--theme-color-main) 0%, var(--theme-color-secundary) 100%);
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   background: #f1f2f3;
   box-shadow: 0 0 30px rgba(56,59,69,.1);
-  height: 80px;
+  height: 80px;   
+  position: sticky;
+  top: 0;
 }
 .header .contLogo {
   height: 100%;
-  max-width: 40%;
+  width: 40%;
   display: flex;
 }
 .header .contLogo .logo {
@@ -51,6 +55,24 @@ body, html {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 30px rgb(56 59 69 / 10%);
+}
+.nav {
+	width: 110px;
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 20px;
+}
+.nav button {
+  width: 50%;
+  min-width: 120px;
+  height: 40px;
+  background: var(--linear-gradient);
+  color: #ffffff;
+  border-radius: 6px 0 0 6px ;
+  border: none;
+  transform: translateX(21px);
+  overflow: hidden;
+  cursor: pointer;
 }
 .header .contUserData .userAvatar img.logo {
   height: 100%;
@@ -96,7 +118,7 @@ body, html {
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b11, 10px 10px 20px #52c7cf11, 0 2px 6px 2px rgb(56 59 69 / 5%);
-  background: linear-gradient(135deg,var(--theme-color-main) 0%, var(--theme-color-secundary) 100%);
+  background: var(--linear-gradient);
   position: relative;
   display: flex;
   justify-content: center;
@@ -146,3 +168,201 @@ body, html {
 /* nav.nav {
   display: none;
 } */
+
+.indexPage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  max-width: 1024px;
+  margin: auto;
+}
+.indexPage .itemPost {
+  display: flex;
+  flex-flow: column;
+  flex: calc(25% - 20px);
+  width: 100%;
+  margin:10px 10px;
+  min-width: 300px;
+  overflow: hidden;
+  border: 1px solid #f1f2f3;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b11, 10px 10px 20px #52c7cf11, 0 2px 6px 2px rgb(56 59 69 / 5%);
+}
+.itemPost .contImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+.itemPost .contImg img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+.itemPost .contData {
+  padding: 20px;
+  width: 100%;
+}
+.itemPost .contDataAuthor {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.contDataAuthor .contImg {
+  flex:40px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.contDataAuthor .contName {
+  flex: calc(100% - 50px);
+  width: calc(100% - 50px);
+}
+.contDataAuthor .name {
+  color: #313539;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.contDataAuthor .name small {
+	display: block;
+	opacity: .5;
+}
+.contData .contText {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40px;
+}
+.contData .contText p {
+  font-size: 18px;
+}
+.contData .contLiks, .contData .contComments {
+  width: calc(50% - 3px);
+  display: flex;
+  vertical-align: top;
+  height: 20px;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contData .contLiks > span, 
+.contData .contComments > span{
+  color: #313539;
+  font-size: 12px;
+}
+.contData .contLiks > span span,
+.contData .contComments > span span {
+  color: var(--theme-color-secundary);
+  font-weight: 900;
+}
+.contData .contBtnComments {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.contBtnComments button {
+  width: 50%;
+  min-width: 120px;
+  height: 40px;
+  background: var(--linear-gradient);
+  color: #ffffff;
+  border-radius: 6px 0 0 6px ;
+  border: none;
+  transform: translateX(21px);
+  margin-bottom: -40px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.contBtnComments button:before, .nav button:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(31,41,51,.8);
+  filter: contrast(2), saturate(5);
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: .4s ease;
+  transform: translateX(100%);
+}
+.contBtnComments button:hover:before, .nav button:hover:before {
+  transform: translateX(0%);
+}
+.contData .contTags {
+  display: block;
+  margin-top: 20px;
+}
+.contData .contTags .tag {
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #f1f2f3;
+  font-size: 12px;
+  color: #313539;
+  margin-right: 5px;
+  /* transition: .4s ease;
+  cursor: pointer; */
+}
+.contData .contTags .tag:nth-last-child(1) {
+  margin-right: 0;
+}
+/* .contData .contTags .tag:hover {
+  background-color: #314151;
+  color: #ffffff;
+} */
+
+/* load */
+.loader > .contImg, 
+.loader .contName, 
+.loader button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #fff 0%, #f1f2f3 100%);
+  box-shadow: 0 5px 20px rgb(56 59 69 / 2%), -10px -10px 20px #59645b05, 10px 10px 20px #52c7cf05, 0 2px 6px 2px rgb(56 59 69 / 2%);
+  animation: rotateGradient 20s linear infinite forwards;
+  -webkit-backface-visibility: hidden;
+}
+
+.loader .contLiks, 
+.loader .contComments,
+.loader .contText,
+.loader .contImg,
+.loader .contTags span {
+  background: linear-gradient(135deg, #f1f2f3 0%, #fff 100%);
+  animation: rotateGradient 30s linear infinite forwards;
+  box-shadow: 0 5px 20px rgb(56 59 69 / 2%), -10px -10px 20px #59645b05, 10px 10px 20px #52c7cf05, 0 2px 6px 2px rgb(56 59 69 / 2%);
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}
+
+.loader .contName, .loader .contText {
+  height: 40px;
+  border-radius: 6px;
+}
+.loader .contTags span {
+	height: 20px;
+	width: calc(33.333% - 10px);
+	margin: 5px;
+	display: inline-block;
+	vertical-align: top;
+  cursor: pointer;
+}

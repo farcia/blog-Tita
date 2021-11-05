@@ -9,7 +9,6 @@ import PublicRoutes from './PublicRoutes';
 export default function AppRouter() {
     return (
         <Router>
-            <NavBar />
             <Switch>
                 <PublicRoutes exact path="/login" component={Login} />
                 <PrivateRoute exact path="/" component={Index} />

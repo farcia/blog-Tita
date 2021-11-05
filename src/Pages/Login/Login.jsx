@@ -16,12 +16,16 @@ const Login = () => {
     
     const onFailure = (response) => {
         console.log(response);
-        console.log('Fallo')
     }
 
     const responseFacebook = (response) => {
-        console.log(response);
-        aurh.Login(response);
+        
+        const nameUser = response.name;
+        const urlImgAvatar = response.picture.data.url;
+
+        successfulUser.username=nameUser;
+        successfulUser.avatar=urlImgAvatar;
+        aurh.Login(successfulUser);
         hystory.push('/');
     }
     const responseGoogle = (response) => {
@@ -31,8 +35,6 @@ const Login = () => {
 
         successfulUser.username=nameUser;
         successfulUser.avatar=urlImgAvatar;
-
-        console.log(successfulUser);
         aurh.Login(successfulUser);
         hystory.push('/');
 

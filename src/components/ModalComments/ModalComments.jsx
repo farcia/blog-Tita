@@ -1,9 +1,11 @@
 import Comment from "../Comment"
 
+
+
 function ModalComments({ postId }) {
     return (
-        <div className="">
-            
+        <div className="contComments">
+            <Comment postId={postId} type={0} />
         </div>
     )
 }

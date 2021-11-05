@@ -76,6 +76,7 @@ body, html {
   transform: translateX(20px);
   overflow: hidden;
   cursor: pointer;
+  font-size: 15px;
 }
 .header .contUserData .userAvatar img.logo {
   height: 100%;
@@ -290,6 +291,7 @@ body, html {
   margin-bottom: -40px;
   overflow: hidden;
   cursor: pointer;
+  font-size: 15px;
 }
 .contBtnComments button:before, .nav button:before {
   content: '';
@@ -387,19 +389,39 @@ body, html {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-	background: rgba(255,255,255,.8);
+	background: rgba(255,255,255,0);
   z-index: 8;
   padding-top: 80px;
+  transition: .4s ease;
+}
+.modal.active {
+	background: rgba(255,255,255,.8);
 }
 .modalContainer {
   position: relative;
   width: 100%;
 	max-width: 380px;
-	background: #f7f8f9;
+	background: var(--linear-gradient);
 	padding: 20px;
 	border-radius: 12px 12px 0 0;
 	max-height: calc(100% - 80px);
-  box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b15, 10px 10px 20px #52c7cf15, 0 2px 6px 2px rgb(56 59 69 / 5%);
+  box-shadow: 0 5px 20px rgb(56 59 69 / 5%), -10px -10px 20px #59645b25, 10px 10px 20px #52c7cf25, 0 2px 6px 2px rgb(56 59 69 / 5%);
+  transition: .4s ease;
+  transform: translateY(calc(100% + 20px));
+}
+.modalContainer.active {
+  transform: translateY(0);
+}
+.modalContainer::before {
+  content: '';
+  position: absolute;
+  background: #f7f8f9;
+  height: calc(100% - 2px);
+  width: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
+	border-radius: 10px 10px 0 0;
+  z-index: -1;
 }
 .modalContainer .contComentItem {
   display: block;

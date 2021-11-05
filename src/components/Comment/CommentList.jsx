@@ -9,12 +9,22 @@ function CommentList( { postId }) {
         let body = document.querySelector('body');
         if(!body.classList.contains('noScroll')){body.classList.add('noScroll')}
     }
+    const activeModal = () => {
+        let modal = document.querySelector('.modal');
+        if(!modal.classList.contains('active')){modal.classList.add('active')}
+    }
+    const activeModalContainer = () => {
+        let modalContainer = document.querySelector('.modalContainer');
+        if(!modalContainer.classList.contains('active')){modalContainer.classList.add('active')}
+    }
     const [comments, setComments] = useState(null);
     useEffect(() => {
         if (postId) {
             Api.get(`/post/${postId}/comment`).then((response) => {
                 setComments(response.data);
-                noScroll()
+                noScroll();
+                activeModal();
+                activeModalContainer();
             });
         }
 

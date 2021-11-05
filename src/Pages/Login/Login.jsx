@@ -58,7 +58,7 @@ const Login = () => {
                         onFailure={onFailure}
                     />
                     <GoogleLogin 
-                        clientId="143815869885-aqert2covg58r7dhn08j2s2hiuqsfue3.apps.googleusercontent.com"
+                        clientId="143815869885-8kj34las3c91ecatcjqm7gqp0lrn1fpk.apps.googleusercontent.com"
                         render={renderProps => (
                             <button onClick={renderProps.onClick} className="btnGeneral google" disabled={renderProps.disabled}>Google</button>
                           )}

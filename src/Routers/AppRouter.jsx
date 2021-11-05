@@ -3,7 +3,6 @@ import PrivateRoute from './PrivateRoutes';
 import Login from '../Pages/Login';
 import Index from '../Pages/Index';
 import Error from '../Pages/Error';
-import NavBar from '../components/NavBar';
 import PublicRoutes from './PublicRoutes';
 
 export default function AppRouter() {

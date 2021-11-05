@@ -16,7 +16,7 @@ export default function PostList() {
     return (
         <>
             {
-                posts?.data?.length ? posts?.data?.map(item => <Post contPost={DummyTransformData(item)} />) : <PostLoader />
+                posts?.data?.length ? posts?.data?.map((item, index) => <Post key={'post' + index} contPost={DummyTransformData(item)} />) : <PostLoader />
             }
         </>
     )

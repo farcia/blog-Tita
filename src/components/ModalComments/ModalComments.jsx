@@ -1,11 +1,11 @@
-import Comment from "../Comment"
+import CommentList from "../Comment/CommentList"
 
 
 
 function ModalComments({ postId }) {
     return (
         <div className="contComments">
-            <Comment postId={postId} type={0} />
+            <CommentList postId={postId} />
         </div>
     )
 }

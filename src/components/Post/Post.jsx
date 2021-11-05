@@ -4,7 +4,7 @@ import ModalComments from "../ModalComments";
 import ModalAuthor from "../ModalAuthor/ModalAuthor";
 import React, { useState } from "react";
 
-export default function Post({ contPost}) {
+export default function Post({ contPost, setTag }) {
     const [modalComentsOpen, setModalComentsOpen] = useState(false);
     const [modalAuthorOpen, setModalAuthorOpen] = useState(false);
     
@@ -38,7 +38,8 @@ export default function Post({ contPost}) {
                         <span>Comentarios: {<Comment postId={contPost.id} type={1} />}</span>
                     </div>
                     <div className="contTags">
-                        {contPost.postTags.map((item, index) => <span key={'tag'+index} className="tag">{item}</span>)}
+                        <small>Filtrar por tag:</small>
+                        {contPost.postTags.map((item, index) => <span key={'tag'+index} onClick={()=>{setTag(item)}} className="tag">{item}</span>)}
                     </div>
                 </div>
             </div>

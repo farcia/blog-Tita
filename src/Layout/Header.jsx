@@ -13,6 +13,9 @@ export default function Header() {
                     <div className="contLogo">
                         <img className="logo" alt="Logo Tita Media" src={Logo} />
                     </div>
+                    <div className="cleanBtn" id="cleanBtn">
+                        <a href="/"><span>Limpiar filtos</span></a>
+                    </div>
                     <div className="contUserData">
                         <div className="userName">
                             <span>{auth.user.username}</span>

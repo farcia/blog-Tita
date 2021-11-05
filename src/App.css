@@ -30,7 +30,7 @@ body, html {
 }
 .header .contLogo {
   height: 100%;
-  width: 40%;
+  width: 100%;
   display: flex;
 }
 .header .contLogo .logo {
@@ -42,7 +42,8 @@ body, html {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 60%;
+  width: 30%;
+  max-width: 230px;
 }
 .header .contUserData .userName {
   opacity: .9;
@@ -58,6 +59,42 @@ body, html {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 30px rgb(56 59 69 / 10%);
+}
+.cleanBtn {
+  display: none;
+}
+.cleanBtn a {
+  width: 50%;
+  min-width: 120px;
+  height: 40px;
+  background: rgba(31,41,51,.8);
+  color: #ffffff;
+  border-radius: 6px;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s ease;
+  box-shadow: 0 0 30px rgb(56 59 69 / 20%);
+}
+.cleanBtn a span {
+  position: relative;
+}
+.cleanBtn a:hover {
+  opacity: 1;
+  background: #f1f2f3;
+  color: #314151;
+}
+
+.cleanBtn.active {
+  display: flex;
+  width: 200px;
+  justify-content: flex-end;
 }
 .nav {
 	width: 110px;
@@ -77,6 +114,10 @@ body, html {
   overflow: hidden;
   cursor: pointer;
   font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .header .contUserData .userAvatar img.logo {
   height: 100%;
@@ -324,21 +365,30 @@ body, html {
   padding: 5px 12px;
   border-radius: 6px;
   background: #ffffff;
-  border: 1px solid #f1f2f3;
+  border: 1px solid var(--theme-color-main);
   font-size: 12px;
   color: #313539;
   margin-right: 5px;
-  /* transition: .4s ease;
-  cursor: pointer; */
+  transition: .4s ease;
+  cursor: pointer;
+  font-weight: 400;
+
 }
 .contData .contTags .tag:nth-last-child(1) {
   margin-right: 0;
 }
-/* .contData .contTags .tag:hover {
+.contData .contTags .tag:hover {
   background-color: #314151;
   color: #ffffff;
-} */
-
+}
+.contData .contTags small {
+  display: block;
+  font-size: 10px;
+  opacity: .5;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 /* load */
 .loader > .contImg, 
 .loader .contName, 
